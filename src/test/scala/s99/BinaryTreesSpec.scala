@@ -1,8 +1,9 @@
 package s99
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
+import org.junit.runner.RunWith
 
-class BinaryTreesSpec extends Specification with BinaryTreesSolutions {
+class BinaryTreesSpec extends SpecificationWithJUnit with BinaryTreesSolutions {
   """ A binary tree is either empty or it is composed of a root element and two successors, which are binary trees
   themselves.
 

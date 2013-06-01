@@ -1,11 +1,11 @@
 package s99
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.matcher.DataTables
 import org.specs2.execute.Result
+import org.junit.runner.RunWith
 
-
-class LogicAndCodesSpec extends Specification with LogicAndCodesSolutions with DataTables {
+class LogicAndCodesSpec extends SpecificationWithJUnit with LogicAndCodesSolutions with DataTables {
   """ Truth tables for logical expressions
 
   Define functions and, or, nand, nor, xor, impl, and equ for logical equivalence) which return true or false

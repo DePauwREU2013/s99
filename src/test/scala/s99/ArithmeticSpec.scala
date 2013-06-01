@@ -1,9 +1,10 @@
 package s99
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable.SpecificationWithJUnit
 import org.specs2.matcher._
+import org.junit.runner.RunWith
 
-class ArithmeticSpec extends Specification with ArithmeticSolutions {
+class ArithmeticSpec extends SpecificationWithJUnit with ArithmeticSolutions {
 
   "Determine whether a given integer number is prime" >>
   { foreach(Seq(7, 13, 19)) { i => i must bePrime }

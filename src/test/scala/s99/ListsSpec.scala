@@ -1,7 +1,8 @@
 package s99
 import org.specs2.mutable._
+import org.junit.runner.RunWith
 
-class ListsSpec extends Specification with ListsSolutions {
+class ListsSpec extends SpecificationWithJUnit with ListsSolutions {
 
   "Find the last element of a list" >>
   { last(List(1, 1, 2, 3, 5, 8)) === 8 }
