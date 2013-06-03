@@ -4,7 +4,11 @@ import Solutions._
 
 trait ListsSolutions {
 
-  def last[T](list: List[T]): T = ???
+  def last[T](list: List[T]): T = T match {
+    case Nil => Nil
+    case tail :: Nil => tail
+    case head :: tail => last[T]
+  }
   def penultimate[T](list: List[T]): T = ???
   def nth[T](n: Int, list: List[T]): T = ???
   def length[T](list: List[T]): Int = ???
