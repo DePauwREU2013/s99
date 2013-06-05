@@ -5,15 +5,31 @@ import Solutions._
 trait ListsSolutions {
 
   def last[T](list: List[T]): T = T match {
-    case Nil => Nil
+    case Nil => sys.error("error.")
     case tail :: Nil => tail
     case head :: tail => last[T]
   }
-  def penultimate[T](list: List[T]): T = ???
-  def nth[T](n: Int, list: List[T]): T = ???
-  def length[T](list: List[T]): Int = ???
-  def reverse[T](list: List[T]): List[T] = ???
-  def isPalindrome[T](list: List[T]): Boolean = ???
+  def penultimate[T](list: List[T]): T = list match{
+    case Nil => sys.error("error")
+    case head::tail::moretail => tail
+    case head::tail => penultimate(tail)
+  }
+  def nth[T](n: Int, list: List[T]): T = list(n)
+  def length[T](list: List[T]): Int = list match{
+    case Nil => 0
+    case head::tail => 1 + length(tail)
+  }
+  def reverse[T](list: List[T]): List[T] = list match{
+    case Nil => sys.error("ERROR")
+    case head::Nil => head
+    case head::tail => reverse(tail)::head
+  }
+  def isPalindrome[T](list: List[T]): Boolean = list match{
+    case Nil => True
+    case head::Nil => True
+    case head::tail =>
+      if head == tail
+  }
   def flatten(list: List[Any]): List[Any] = ???
   def compress[T](list: List[T]): List[T] = ???
   def pack[T](list: List[T]): List[List[T]] = ???
