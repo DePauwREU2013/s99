@@ -24,19 +24,19 @@ trait ListsSolutions {
   }
       
   def compress[T](list: List[T]): List[T] = {
-    def compressIter[T](xs: List[T], acc: List[T]): List[T] = {
+    def compressIter(xs: List[T], acc: List[T]): List[T] = {
       if (xs.isEmpty) acc
       else compressIter(xs.dropWhile(_ == xs.head), acc :+ xs.head)
     }
-    compressIter[T](list, List())
+    compressIter(list, List())
   }
   
   def pack[T](list: List[T]): List[List[T]] = {
-    def packIter[T](xs: List[T], acc: List[List[T]]): List[List[T]] = {
+    def packIter(xs: List[T], acc: List[List[T]]): List[List[T]] = {
       if (xs.isEmpty) acc
       else packIter(xs.dropWhile(_ == xs.head), acc :+ xs.takeWhile(_ == xs.head))
     }
-    packIter[T](list, List())
+    packIter(list, List())
   }
   
   def encode[T](list: List[T]): List[(Int, T)] = pack(list) map { ls => (ls.length, ls.head) }
@@ -49,7 +49,7 @@ trait ListsSolutions {
   def decode[T](list: List[(Int, T)]): List[T] = list flatMap { case (n, x) => List().padTo(n, x) }
   
   def encodeDirect[T](list: List[T]): List[(Int, T)] = {
-    def encodeIter[T](xs: List[T], acc: List[(Int, T)]): List[(Int, T)] = {
+    def encodeIter(xs: List[T], acc: List[(Int, T)]): List[(Int, T)] = {
       if (xs.isEmpty) acc
       else encodeIter(xs.dropWhile(x => x == xs.head), acc :+ (xs.takeWhile(x => x == xs.head).length, xs.head))
     }
