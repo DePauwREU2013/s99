@@ -1,3 +1,6 @@
+"HELLO WORLD!!!"
+
+
 This project is the implementation of the [99 Scala problems](http://aperiodic.net/phil/scala/s-99/) as a set of [specs2](http://specs2.org) specifications, ready to implement and execute with [sbt](https://github.com/harrah/xsbt/).
 
 Each Specification is divided into:
